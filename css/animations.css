@@ -1,22 +1,40 @@
-   @keyframes moveToRight {
-       0% {
-           transform: translateX(75vw);
-       }
+@keyframes entryAnimation {
+  0% {
+    transform: translateX(75vw);
+  }
 
-       40% {
-           transform: translateX(-50px);
-       }
+  40% {
+    transform: translateX(-50px);
+  }
 
-       50%,
-       70% {
-           transform: translateX(0);
-       }
+  50%,
+  70% {
+    transform: translateX(0);
+  }
 
-       60% {
-           transform: translateX(-35px);
-       }
+  60% {
+    transform: translateX(-35px);
+  }
 
-       100% {
-           transform: translateX(0);
-       }
-   }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitAnimation {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-75vw);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

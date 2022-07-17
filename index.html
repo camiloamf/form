@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>excellence</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body onload="actualQuestion()">
     <header>
@@ -19,9 +25,11 @@
     <main>
       <div class="grandFather">
         <div class="father" id="father">
-          <div class="element" id="animation">
-            <div>
-              <label for="actualAnswer" id="actualQuestion"></label>
+          <div class="mainContainer" id="animation">
+            <div class="container">
+              <label for="actualAnswer" id="actualQuestion"
+                >Hola, ¿como estas?</label
+              >
               <div class="mainInput">
                 <input type="text" name="" id="actualAnswer" />
                 <button onclick="saveName()" id="button">
@@ -31,18 +39,9 @@
             </div>
           </div>
         </div>
-        <div
-          class="father"
-          style="justify-content: flex-start; margin-right: 50vw"
-        >
-          <div class="element2">
-            <a href="https://www.facebook.com">RABBIT x2</a>
-          </div>
-        </div>
       </div>
     </main>
     <footer></footer>
-    <script src="./js/functions.js"></script>
     <script src="./js/questionsHandler.js"></script>
     <script
       defer
