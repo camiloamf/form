@@ -116,10 +116,16 @@ img {
   border-radius: 5px;
   border-width: 2px;
   border-style: solid;
-  border-color: Black;
+  border-color: rgba(0, 0, 0, 0.425);
+  transition: 0.1s;
   background-color: rgb(255, 213, 224, 0.2);
 }
 
 .block + .block {
-  margin-left: 2%;
+  margin-left: 3%;
+}
+
+.block:hover {
+  border-style: solid;
+  border-color: Black;
 }
