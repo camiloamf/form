@@ -83,7 +83,16 @@ const questions = {
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
                                   type: "select",
-                                  nextQuestions: [],
+                                  nextQuestions: [
+                                    {
+                                      ask: "Formulario finalizado",
+                                      icon: "fas fa-shish-kebab",
+                                      label:
+                                        "Felizidades!!! has terminado el formulario",
+                                      type: "end",
+                                      nextQuestions: [],
+                                    },
+                                  ],
                                 },
                               ],
                             },
@@ -120,7 +129,16 @@ const questions = {
                             "¿Estás tomando suplementos vitamínicos para fertilidad o vitaminas prenatales?",
                           icon: "",
                           type: "select",
-                          nextQuestions: [],
+                          nextQuestions: [
+                            {
+                              ask: "Formulario finalizado",
+                              icon: "fas fa-shish-kebab",
+                              label:
+                                "Felizidades!!! has terminado el formulario",
+                              type: "end",
+                              nextQuestions: [],
+                            },
+                          ],
                         },
                       ],
                     },
@@ -130,7 +148,15 @@ const questions = {
                       label:
                         "¿Estas embarazada o estás pensando quedarte embarazada?",
                       type: "select",
-                      nextQuestions: [],
+                      nextQuestions: [
+                        {
+                          ask: "Formulario finalizado",
+                          icon: "",
+                          label: "Felizidades!!! has terminado el formulario",
+                          type: "end",
+                          nextQuestions: [],
+                        },
+                      ],
                     },
                   ],
                 },
@@ -211,8 +237,10 @@ function renderizeNextQuestions(questionsToRender) {
 function createBlock(questionString, type, label, icon) {
   if (type === "select") {
     createSelect(questionString, label, icon);
-  } else {
+  } else if (type === "input") {
     createInput(questionString);
+  } else {
+    createEnd(questionString, label);
   }
 }
 
@@ -254,9 +282,7 @@ function createSelect(questionString, label, icon) {
     iconElement.style.width = "30px";
     iconElement.style.height = "30px";
 
-    console.log(iconElement);
     mainBlock.append(iconElement);
-    console.log(iconElement);
   }
 
   mainBlock.append(question);
@@ -267,7 +293,7 @@ function createSelect(questionString, label, icon) {
   localMainInput.style.height = "100%";
   localMainInput.appendChild(mainBlock);
   mainBlock.addEventListener("click", function (e) {
-    const answer = e.target.innerHTML;
+    const answer = e.target.innerHTML.replace("<p>", "").replace("</p>", "");
     saveAnswer(answer);
   });
 }
@@ -295,6 +321,26 @@ function createInput(questionString) {
   };
 }
 
+function createEnd(finishMessage, FinishTitle) {
+  var localMainInput = document.getElementsByClassName("mainInput")[0];
+  if (localMainInput) {
+    localMainInput.remove();
+  }
+  document.getElementsByClassName("container")[0].append(actualQuestionTag);
+  document.getElementsByClassName("container")[0].append(mainInputTag);
+
+  // document.getElementById("button").style.display = "none";
+  // document.getElementById("actualAnswer").style.display = "none";
+  // document.getElementsByClassName("container")[0].style.flexDirection =
+  //   "column";
+
+  document.getElementById("actualQuestion").innerHTML = FinishTitle;
+
+  document.getElementById("button").onclick = function () {
+    console.log("pressed");
+  };
+}
+
 function nextQuestionsFinder(questionObject, answer) {
   const answerFinded = !Array.isArray(questionObject)
     ? questionObject
@@ -308,10 +354,17 @@ function nextQuestionsFinder(questionObject, answer) {
       return nextQuestionsFinder(nextNode, answer);
     } else {
       //aqui esta el problema de que se repita **arreglar urgentemente
-      questionObject.forEach(({ nextQuestions }) => {
-        let posibleQuestions = this.nextQuestionsFinder(nextQuestions, answer);
-        if (posibleQuestions) {
-          auxiliarQuestion = posibleQuestions;
+      questionObject.forEach((obj) => {
+        if (obj.ask == answer) {
+          return obj.nextQuestions;
+        } else {
+          let posibleQuestions = this.nextQuestionsFinder(
+            obj.nextQuestions,
+            answer
+          );
+          if (posibleQuestions) {
+            auxiliarQuestion = posibleQuestions;
+          }
         }
       });
       return findResponseArr(auxiliarQuestion);
