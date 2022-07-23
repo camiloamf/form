@@ -29,7 +29,40 @@ const questions = {
                         "¿Estas embarazada o estás pensando quedarte embarazada?",
                       icon: "fas fa-baby",
                       type: "select",
-                      nextQuestions: [],
+                      nextQuestions: [
+                        {
+                          ask: "Si.",
+                          label: "¿Estás tomando Vitaminas Prentales?",
+                          icon: "",
+                          type: "select",
+                          nextQuestions: [
+                            {
+                              ask: "Formulario finalizado",
+                              icon: "",
+                              label:
+                                "Felizidades!!! has terminado el formulario",
+                              type: "end",
+                              nextQuestions: [],
+                            },
+                          ],
+                        },
+                        {
+                          ask: "No.",
+                          label: "¿Estás tomando Vitaminas Prentales?",
+                          icon: "",
+                          type: "select",
+                          nextQuestions: [
+                            {
+                              ask: "Formulario finalizado",
+                              icon: "",
+                              label:
+                                "Felizidades!!! has terminado el formulario",
+                              type: "end",
+                              nextQuestions: [],
+                            },
+                          ],
+                        },
+                      ],
                     },
                     {
                       ask: "Quiero quedarme embarazada",
@@ -65,7 +98,85 @@ const questions = {
                                         "¿Has consultado con tu ginecólogo acerca de este tema?",
                                       icon: "",
                                       type: "select",
-                                      nextQuestions: [],
+                                      nextQuestions: [
+                                        {
+                                          ask: "Si.  ",
+                                          icon: "",
+                                          label:
+                                            "¿Has realizado pruebas de reserva ovárica?",
+                                          type: "select",
+                                          nextQuestions: [
+                                            {
+                                              ask: "Si.   ",
+                                              icon: "",
+                                              label:
+                                                "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
+                                              type: "select",
+                                              nextQuestions: [
+                                                {
+                                                  ask: "Formulario finalizado",
+                                                  icon: "fas fa-shish-kebab",
+                                                  label:
+                                                    "Felizidades!!! has terminado el formulario",
+                                                  type: "end",
+                                                  nextQuestions: [],
+                                                },
+                                              ],
+                                            },
+                                            {
+                                              ask: "No.   ",
+                                              icon: "",
+                                              label:
+                                                "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
+                                              type: "select",
+                                              nextQuestions: [
+                                                {
+                                                  ask: "Formulario finalizado",
+                                                  icon: "fas fa-shish-kebab",
+                                                  label:
+                                                    "Felizidades!!! has terminado el formulario",
+                                                  type: "end",
+                                                  nextQuestions: [],
+                                                },
+                                              ],
+                                            },
+                                          ],
+                                        },
+                                        {
+                                          ask: "No.  ",
+                                          icon: "",
+                                          label:
+                                            "¿Has realizado pruebas de reserva ovárica?",
+                                          type: "select",
+                                          nextQuestions: [
+                                            {
+                                              ask: "Formulario finalizado",
+                                              icon: "fas fa-shish-kebab",
+                                              label:
+                                                "Felizidades!!! has terminado el formulario",
+                                              type: "end",
+                                              nextQuestions: [],
+                                            },
+                                          ],
+                                        },
+                                        {
+                                          ask: "No lo sé.  ",
+                                          icon: "",
+                                          label:
+                                            "¿Has realizado pruebas de reserva ovárica?",
+                                          type: "select",
+                                          nextQuestions: [
+                                            {
+                                              ask: "Formulario finalizado",
+                                              icon: "fas fa-shish-kebab",
+                                              label:
+                                                "Felizidades!!! has terminado el formulario",
+                                              type: "end",
+                                              nextQuestions: [],
+                                            },
+                                          ],
+                                        },
+                                      ],
                                     },
                                     {
                                       ask: "Por el momento no",
@@ -73,7 +184,16 @@ const questions = {
                                         "¿Has consultado con tu ginecólogo acerca de este tema?",
                                       icon: "",
                                       type: "select",
-                                      nextQuestions: [],
+                                      nextQuestions: [
+                                        {
+                                          ask: "Formulario finalizado",
+                                          icon: "fas fa-shish-kebab",
+                                          label:
+                                            "Felizidades!!! has terminado el formulario",
+                                          type: "end",
+                                          nextQuestions: [],
+                                        },
+                                      ],
                                     },
                                   ],
                                 },
@@ -293,7 +413,13 @@ function createSelect(questionString, label, icon) {
   localMainInput.style.height = "100%";
   localMainInput.appendChild(mainBlock);
   mainBlock.addEventListener("click", function (e) {
-    const answer = e.target.innerHTML.replace("<p>", "").replace("</p>", "");
+    const answer = e.target.innerHTML.includes("-->")
+      ? e.target.innerHTML
+          .split("-->")[1]
+          .replace("<p>", "")
+          .replace("</p>", "")
+      : e.target.innerHTML.replace("<p>", "").replace("</p>", "");
+    console.log(answer);
     saveAnswer(answer);
   });
 }
@@ -336,9 +462,9 @@ function createEnd(finishMessage, FinishTitle) {
 
   document.getElementById("actualQuestion").innerHTML = FinishTitle;
 
-  document.getElementById("button").onclick = function () {
-    console.log("pressed");
-  };
+  // document.getElementById("button").onclick = function () {
+  //   console.log("pressed");
+  // };
 }
 
 function nextQuestionsFinder(questionObject, answer) {
