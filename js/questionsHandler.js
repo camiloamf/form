@@ -86,7 +86,7 @@ const questions = {
                               type: "select",
                               nextQuestions: [
                                 {
-                                  ask: "Si, lo he estado intentando",
+                                  ask: "Si, he estado intentando",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -198,7 +198,7 @@ const questions = {
                                   ],
                                 },
                                 {
-                                  ask: "No.",
+                                  ask: "No. ",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -481,6 +481,7 @@ function nextQuestionsFinder(questionObject, answer) {
     } else {
       //aqui esta el problema de que se repita **arreglar urgentemente
       questionObject.forEach((obj) => {
+        console.log(2, obj);
         if (obj.ask == answer) {
           return obj.nextQuestions;
         } else {
@@ -490,6 +491,7 @@ function nextQuestionsFinder(questionObject, answer) {
           );
           if (posibleQuestions) {
             auxiliarQuestion = posibleQuestions;
+            console.log(3, posibleQuestions);
           }
         }
       });
@@ -499,6 +501,7 @@ function nextQuestionsFinder(questionObject, answer) {
 }
 
 function findResponseArr(arr) {
+  console.log(4, arr);
   if (arr[0] && arr[0].ask) {
     return arr;
   } else {
