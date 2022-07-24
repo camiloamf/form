@@ -1,36 +1,42 @@
 const questions = {
-  ask: "Empecemos por el principio, ¿como te llamas?",
+  ask: "Para empezar, por favor dinos cómo te llamas.",
   direction: "",
+  behavior: "",
   icon: "",
   type: "input",
   nextQuestions: [
     {
       ask: "¿Cual es tu dirección de correo?",
       direction: "",
+      behavior: "",
       icon: "",
       type: "input",
       nextQuestions: [
         {
           ask: "¿En que país vives?",
           direction: "",
+          behavior: "autocomplete",
           icon: "",
           type: "input",
           nextQuestions: [
             {
               ask: "¿Y en qué ciudad o provincia?",
               direction: "",
+              behavior: "",
               icon: "",
               type: "input",
               nextQuestions: [
                 {
                   ask: "¿Cuántos años tienes?",
                   direction: "",
+                  behavior: "",
                   icon: "",
                   type: "input",
                   nextQuestions: [
                     {
                       ask: "Estoy embarazada",
                       direction: "column",
+                      behavior: "",
                       label:
                         "¿Estas embarazada o estás pensando quedarte embarazada?",
                       icon: "fas fa-baby",
@@ -39,6 +45,7 @@ const questions = {
                         {
                           ask: "Si.",
                           direction: "",
+                          behavior: "",
                           label: "¿Estás tomando Vitaminas Prentales?",
                           icon: "",
                           type: "select",
@@ -46,6 +53,7 @@ const questions = {
                             {
                               ask: "Formulario finalizado",
                               direction: "",
+                              behavior: "",
                               icon: "",
                               label:
                                 "Felizidades!!! has terminado el formulario",
@@ -57,6 +65,7 @@ const questions = {
                         {
                           ask: "No.",
                           direction: "",
+                          behavior: "",
                           label: "¿Estás tomando Vitaminas Prentales?",
                           icon: "",
                           type: "select",
@@ -64,6 +73,7 @@ const questions = {
                             {
                               ask: "Formulario finalizado",
                               direction: "",
+                              behavior: "",
                               icon: "",
                               label:
                                 "Felizidades!!! has terminado el formulario",
@@ -77,6 +87,7 @@ const questions = {
                     {
                       ask: "Quiero quedarme embarazada",
                       direction: "column",
+                      behavior: "",
                       icon: "fas fa-baby-carriage",
                       label:
                         "¿Estas embarazada o estás pensando quedarte embarazada?",
@@ -85,6 +96,7 @@ const questions = {
                         {
                           ask: "Si las he tomado",
                           direction: "",
+                          behavior: "",
                           label:
                             "¿Estás tomando suplementos vitamínicos para fertilidad o vitaminas prenatales?",
                           icon: "",
@@ -93,6 +105,7 @@ const questions = {
                             {
                               ask: "Si, lo he hecho",
                               direction: "",
+                              behavior: "",
                               label:
                                 "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
                               icon: "",
@@ -101,6 +114,7 @@ const questions = {
                                 {
                                   ask: "Si, he estado intentando",
                                   direction: "",
+                                  behavior: "",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -109,6 +123,7 @@ const questions = {
                                     {
                                       ask: "Claro",
                                       direction: "",
+                                      behavior: "",
                                       label:
                                         "¿Has consultado con tu ginecólogo acerca de este tema?",
                                       icon: "",
@@ -117,6 +132,7 @@ const questions = {
                                         {
                                           ask: "Si.  ",
                                           direction: "",
+                                          behavior: "",
                                           icon: "",
                                           label:
                                             "¿Has realizado pruebas de reserva ovárica?",
@@ -125,6 +141,7 @@ const questions = {
                                             {
                                               ask: "Si.   ",
                                               direction: "",
+                                              behavior: "",
                                               icon: "",
                                               label:
                                                 "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
@@ -133,6 +150,7 @@ const questions = {
                                                 {
                                                   ask: "Formulario finalizado",
                                                   direction: "",
+                                                  behavior: "",
                                                   icon: "fas fa-shish-kebab",
                                                   label:
                                                     "Felizidades!!! has terminado el formulario",
@@ -144,6 +162,7 @@ const questions = {
                                             {
                                               ask: "No.   ",
                                               direction: "",
+                                              behavior: "",
                                               icon: "",
                                               label:
                                                 "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
@@ -152,6 +171,7 @@ const questions = {
                                                 {
                                                   ask: "Formulario finalizado",
                                                   direction: "",
+                                                  behavior: "",
                                                   icon: "fas fa-shish-kebab",
                                                   label:
                                                     "Felizidades!!! has terminado el formulario",
@@ -165,6 +185,7 @@ const questions = {
                                         {
                                           ask: "No.  ",
                                           direction: "",
+                                          behavior: "",
                                           icon: "",
                                           label:
                                             "¿Has realizado pruebas de reserva ovárica?",
@@ -173,6 +194,7 @@ const questions = {
                                             {
                                               ask: "Formulario finalizado",
                                               direction: "",
+                                              behavior: "",
                                               icon: "fas fa-shish-kebab",
                                               label:
                                                 "Felizidades!!! has terminado el formulario",
@@ -184,6 +206,7 @@ const questions = {
                                         {
                                           ask: "No lo sé.  ",
                                           direction: "",
+                                          behavior: "",
                                           icon: "",
                                           label:
                                             "¿Has realizado pruebas de reserva ovárica?",
@@ -192,6 +215,7 @@ const questions = {
                                             {
                                               ask: "Formulario finalizado",
                                               direction: "",
+                                              behavior: "",
                                               icon: "fas fa-shish-kebab",
                                               label:
                                                 "Felizidades!!! has terminado el formulario",
@@ -205,6 +229,7 @@ const questions = {
                                     {
                                       ask: "Por el momento no",
                                       direction: "",
+                                      behavior: "",
                                       label:
                                         "¿Has consultado con tu ginecólogo acerca de este tema?",
                                       icon: "",
@@ -213,6 +238,7 @@ const questions = {
                                         {
                                           ask: "Formulario finalizado",
                                           direction: "",
+                                          behavior: "",
                                           icon: "fas fa-shish-kebab",
                                           label:
                                             "Felizidades!!! has terminado el formulario",
@@ -226,6 +252,7 @@ const questions = {
                                 {
                                   ask: "No. ",
                                   direction: "",
+                                  behavior: "",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -234,6 +261,7 @@ const questions = {
                                     {
                                       ask: "Formulario finalizado",
                                       direction: "",
+                                      behavior: "",
                                       icon: "fas fa-shish-kebab",
                                       label:
                                         "Felizidades!!! has terminado el formulario",
@@ -247,6 +275,7 @@ const questions = {
                             {
                               ask: "No.",
                               direction: "",
+                              behavior: "",
                               label:
                                 "¿Has realizado algún ciclo de reproducción asistida en el que hayas obtenido menos de 6 óvulos o has sido diagnosticada como baja respondedora?",
                               icon: "",
@@ -255,6 +284,7 @@ const questions = {
                                 {
                                   ask: "Si, lo he estado intentando",
                                   direction: "",
+                                  behavior: "",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -264,6 +294,7 @@ const questions = {
                                 {
                                   ask: "No lo he estado intentando",
                                   direction: "",
+                                  behavior: "",
                                   label:
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
@@ -277,6 +308,7 @@ const questions = {
                         {
                           ask: "No las he tomado",
                           direction: "",
+                          behavior: "",
                           label:
                             "¿Estás tomando suplementos vitamínicos para fertilidad o vitaminas prenatales?",
                           icon: "",
@@ -285,6 +317,7 @@ const questions = {
                             {
                               ask: "Formulario finalizado",
                               direction: "",
+                              behavior: "",
                               icon: "fas fa-shish-kebab",
                               label:
                                 "Felizidades!!! has terminado el formulario",
@@ -298,6 +331,7 @@ const questions = {
                     {
                       ask: "No estoy segura de estar embarazada",
                       direction: "column",
+                      behavior: "",
                       icon: "fas fa-shish-kebab",
                       label:
                         "¿Estas embarazada o estás pensando quedarte embarazada?",
@@ -306,6 +340,7 @@ const questions = {
                         {
                           ask: "Formulario finalizado",
                           direction: "",
+                          behavior: "",
                           icon: "",
                           label: "Felizidades!!! has terminado el formulario",
                           type: "end",
@@ -360,7 +395,9 @@ function saveName() {
     var name = document.getElementById("actualAnswer").value;
     document.getElementById("actualAnswer").value = "";
     document.getElementById("actualQuestion").innerHTML =
-      "Hola " + name + ", estamos aquí para resolver tus dudas...";
+      "Hola " +
+      name +
+      ", te haremos unas breves preguntas para conocer más a fondo tu caso";
     document.getElementById("animation").style.animation = "none";
     entryAnimation();
     document.getElementById("button").style.display = "none";
@@ -383,17 +420,17 @@ function saveAnswer(answer, writeAnswer) {
 }
 
 function renderizeNextQuestions(questionsToRender) {
-  questionsToRender.map(({ ask, type, label, icon, direction }) => {
-    createBlock(ask, type, label, icon, direction);
+  questionsToRender.map(({ ask, type, label, icon, direction, behavior }) => {
+    createBlock(ask, type, label, icon, direction, behavior);
   });
   entryAnimation();
 }
 
-function createBlock(questionString, type, label, icon, direction) {
+function createBlock(questionString, type, label, icon, direction, behavior) {
   if (type === "select") {
     createSelect(questionString, label, icon, direction);
   } else if (type === "input") {
-    createInput(questionString);
+    createInput(questionString, behavior);
   } else {
     createEnd(questionString, label);
   }
@@ -467,11 +504,12 @@ function createSelect(questionString, label, icon, direction) {
   });
 }
 
-function createInput(questionString) {
+function createInput(questionString, behavior) {
   var localMainInput = document.getElementsByClassName("mainInput")[0];
   if (localMainInput) {
     localMainInput.remove();
   }
+
   document.getElementsByClassName("container")[0].append(actualQuestionTag);
   document.getElementsByClassName("container")[0].append(mainInputTag);
   document.getElementById("actualAnswer").value = "";
@@ -483,8 +521,31 @@ function createInput(questionString) {
 
   document.getElementById("actualQuestion").innerHTML = questionString;
 
+  var s = document.createElement("script");
+
+  if (behavior && behavior === "autocomplete") {
+    document.getElementById("actualAnswer").id = "actualAnswer" + behavior;
+
+    s.innerHTML =
+      "autocomplete(document.getElementById(" +
+      "actualAnswerautocomplete" +
+      "), countries);";
+    document.body.appendChild(s);
+  }
+
   document.getElementById("button").onclick = function () {
-    var writeAnswer = document.getElementById("actualAnswer").value;
+    var writeAnswer = "";
+    if (behavior) {
+      var actualAnswer = document.getElementById("actualAnswer" + behavior);
+      writeAnswer = actualAnswer.value;
+      actualAnswer.id = "actualAnswer";
+      var actualAnswerClone = actualAnswer.cloneNode(true);
+      actualAnswer.parentNode.replaceChild(actualAnswerClone, actualAnswer);
+      s.innerHTML = "";
+    } else {
+      writeAnswer = document.getElementById("actualAnswer").value;
+    }
+
     var answer = document.getElementById("actualQuestion").innerHTML;
     saveAnswer(answer, writeAnswer);
   };
