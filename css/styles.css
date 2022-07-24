@@ -21,6 +21,7 @@ div {
 
 .father {
   width: 100%;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,7 +55,7 @@ img {
 }
 
 .mainContainer {
-  margin-top: 40px;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -81,7 +82,7 @@ img {
 #actualAnswer {
   padding-right: 10px;
   padding-left: 10px;
-  border-radius: 5px;
+  border-radius: 50px;
   border-color: black;
   height: 50px;
   width: 100%;
@@ -113,16 +114,12 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 50px;
   border-width: 2px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.425);
   transition: 0.1s;
   background-color: rgb(255, 213, 224, 0.2);
-}
-
-.block + .block {
-  margin-left: 3%;
 }
 
 .block:hover {
