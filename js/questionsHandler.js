@@ -56,7 +56,7 @@ const questions = {
                               behavior: "",
                               icon: "",
                               label:
-                                "Felizidades!!! has terminado el formulario",
+                                "Felicidades!!! has terminado el formulario",
                               type: "end",
                               nextQuestions: [],
                             },
@@ -76,7 +76,7 @@ const questions = {
                               behavior: "",
                               icon: "",
                               label:
-                                "Felizidades!!! has terminado el formulario",
+                                "Felicidades!!! has terminado el formulario",
                               type: "end",
                               nextQuestions: [],
                             },
@@ -153,7 +153,7 @@ const questions = {
                                                   behavior: "",
                                                   icon: "fas fa-shish-kebab",
                                                   label:
-                                                    "Felizidades!!! has terminado el formulario",
+                                                    "Felicidades!!! has terminado el formulario",
                                                   type: "end",
                                                   nextQuestions: [],
                                                 },
@@ -174,7 +174,7 @@ const questions = {
                                                   behavior: "",
                                                   icon: "fas fa-shish-kebab",
                                                   label:
-                                                    "Felizidades!!! has terminado el formulario",
+                                                    "Felicidades!!! has terminado el formulario",
                                                   type: "end",
                                                   nextQuestions: [],
                                                 },
@@ -197,7 +197,7 @@ const questions = {
                                               behavior: "",
                                               icon: "fas fa-shish-kebab",
                                               label:
-                                                "Felizidades!!! has terminado el formulario",
+                                                "Felicidades!!! has terminado el formulario",
                                               type: "end",
                                               nextQuestions: [],
                                             },
@@ -218,7 +218,7 @@ const questions = {
                                               behavior: "",
                                               icon: "fas fa-shish-kebab",
                                               label:
-                                                "Felizidades!!! has terminado el formulario",
+                                                "Felicidades!!! has terminado el formulario",
                                               type: "end",
                                               nextQuestions: [],
                                             },
@@ -241,7 +241,7 @@ const questions = {
                                           behavior: "",
                                           icon: "fas fa-shish-kebab",
                                           label:
-                                            "Felizidades!!! has terminado el formulario",
+                                            "Felicidades!!! has terminado el formulario",
                                           type: "end",
                                           nextQuestions: [],
                                         },
@@ -264,7 +264,7 @@ const questions = {
                                       behavior: "",
                                       icon: "fas fa-shish-kebab",
                                       label:
-                                        "Felizidades!!! has terminado el formulario",
+                                        "Felicidades!!! has terminado el formulario",
                                       type: "end",
                                       nextQuestions: [],
                                     },
@@ -320,7 +320,7 @@ const questions = {
                               behavior: "",
                               icon: "fas fa-shish-kebab",
                               label:
-                                "Felizidades!!! has terminado el formulario",
+                                "Felicidades!!! has terminado el formulario",
                               type: "end",
                               nextQuestions: [],
                             },
@@ -342,7 +342,7 @@ const questions = {
                           direction: "",
                           behavior: "",
                           icon: "",
-                          label: "Felizidades!!! has terminado el formulario",
+                          label: "Felicidades!!! has terminado el formulario",
                           type: "end",
                           nextQuestions: [],
                         },
@@ -569,6 +569,7 @@ function createEnd(finishMessage, FinishTitle) {
   // document.getElementById("button").onclick = function () {
   //   console.log("pressed");
   // };
+  response();
 }
 
 function nextQuestionsFinder(questionObject, answer) {
@@ -611,4 +612,9 @@ function findResponseArr(arr) {
   } else {
     return findResponseArr(arr[0]);
   }
+}
+
+function response() {
+  //aqui has lo que tengas que hacer para el form o como sea que quieras manejar las respuestas
+  console.log(answers);
 }
