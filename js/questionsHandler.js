@@ -289,7 +289,18 @@ const questions = {
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
                                   type: "select",
-                                  nextQuestions: [],
+                                  nextQuestions: [
+                                    {
+                                      ask: "Formulario finalizado",
+                                      direction: "",
+                                      behavior: "",
+                                      icon: "fas fa-shish-kebab",
+                                      label:
+                                        "Felicidades!!! has terminado el formulario",
+                                      type: "end",
+                                      nextQuestions: [],
+                                    },
+                                  ],
                                 },
                                 {
                                   ask: "No lo he estado intentando",
@@ -299,7 +310,18 @@ const questions = {
                                     "¿Llevas más de 6 meses intentando quedar embarazada?",
                                   icon: "",
                                   type: "select",
-                                  nextQuestions: [],
+                                  nextQuestions: [
+                                    {
+                                      ask: "Formulario finalizado",
+                                      direction: "",
+                                      behavior: "",
+                                      icon: "fas fa-shish-kebab",
+                                      label:
+                                        "Felicidades!!! has terminado el formulario",
+                                      type: "end",
+                                      nextQuestions: [],
+                                    },
+                                  ],
                                 },
                               ],
                             },
